@@ -1,0 +1,33 @@
+<div ng-app="Demo" ng-controller=ApplyDiscount>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Select Product for Applying discount on:</h3>
+			<hr/>
+		</div>
+	</div>
+	<div ng-controller=ProductController>
+		<div>
+			<select ng-model="selectedProduct" ng-change="getSingleProduct(); calculateDiscount()">
+			  <option ng-repeat="product in response" value="{{product.id}}" >{{product.name}}</option>
+			</select>
+			<h4 class="success" ng-if="selectedProduct!=0">Discount Applied Successfully</h4>
+		</div>
+		
+		<div class="col-sm-4" ng-if="selectedProduct!=0">                	
+		        <div class="thumbnail">
+                    <img data-ng-src="{{pic}}" alt="{{oneProduct.name}}" class="landingImg">
+                    
+                    <h4 class="bold">{{oneProduct.name}}</h4>
+                    <hr/>
+                    <h4 class="bold">&#8377;{{oneProduct.price}}</h4>
+                    <hr/>
+                    <h4 class="bold" ng-model="discountedPrice">
+                    Discounted Price: {{oneProduct.price-oneProduct.price*discount.percentage*0.01}}</h4>
+                	<button ng-click="updateProduct()" class="btn btn-primary">
+                	Execute Discount</button>
+                	
+                </div>
+		 </div>
+	</div>
+</div>

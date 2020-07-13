@@ -1,0 +1,42 @@
+<script type="text/javascript" src="../scripts/app.js"></script>
+
+<div class="container" data-ng-app="Demo" data-ng-controller=DiscountController >
+	<div class="row">
+	
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>We have following Discounts currently</h3>
+				<hr/>
+			</div>
+		</div>
+		
+		<div class="row is-table-row">
+		   <div class="col-sm-4" ng-repeat="discount in response" ng-if="discount.name!=null && discount.percentage!=null">                	
+		        <div >
+                    <img data-ng-src="{{pic}}" alt="{{discount.name}}" class="landingImg">
+                    <h5 class="bold">{{discount.name}}</h5>
+                    <hr/>
+                    <h5 class="bold">{{discount.percentage}}%</h5>
+                    <hr/>
+                    <h5 class="bold">Start Date: {{discount.start_date}}</h5>
+                    <hr/>
+                     <h5 class="bold">End Date: {{discount.end_date}}</h5>
+                    <hr/>
+                    <div class="caption" >
+						<div data-ng-controller=FunctionTest>
+                    		<a href="#/viewDiscounts/{{discount.id}}" 
+                    		class="btn btn-primary pull-right">Apply Discount</a>
+                    	</div>                    
+                    </div>
+                   
+                </div>
+		    </div>
+		   <!--  <div class="col-sm-4 col-lg-4 col-md-4">
+		        <h3>Checkout more products!</h4>
+		        <hr/>
+		        <a class="btn btn-primary" href="${contextRoot}/show/all/products">More Products</a>
+		    </div> -->
+		</div>
+		
+	</div>
+</div>		

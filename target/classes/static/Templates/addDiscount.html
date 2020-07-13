@@ -1,0 +1,70 @@
+<h2>AngularJS Sample Application</h2>
+ 
+ <div ng-app = "Demo" ng-controller = "AddDiscount">
+         
+    <form ng-submit="submitForm()" novalidate>
+       <table border = "0">
+          <tr>
+             <td>Enter name:</td>
+             <td>
+             	<input name = "discountname" type = "text" 
+             	ng-model = "discountForm.name" required>
+                <!-- <span style = "color:red" 
+                ng-show = "discountForm.discountName.$dirty && discountForm.discountName.$invalid">
+                   <span ng-show = "studentForm.firstname.$error.required">
+                   	Discount Name is required.
+                   </span>
+                </span> -->
+             </td>
+          </tr>
+          
+          <tr> 
+             <td>Enter Discount Percentage </td>
+             <td><input name = "discountPercentage"  type = "text" 
+             ng-model = "discountForm.percentage" required>
+                <!-- <span style = "color:red" ng-show = "discountForm.discountPercentage.$dirty && discountForm.discountPercentage.$invalid">
+                   <span ng-show = "discountForm.discountPercentage.$error.required">Discount Percentage is required.</span>
+                </span> -->
+             </td>
+          </tr>
+          
+          <tr>
+             <td>Start Date: </td>
+             <td><input type="date" ng-init="startDate=(myDate | date:'dd-MM-yyyy')" 
+             ng-model="discountForm.start_date" min="2020-07-01"/>
+                <!-- <span style = "color:red" ng-show = "studentForm.email.$dirty && studentForm.email.$invalid">
+                   <span ng-show = "studentForm.email.$error.required">Email is required.</span>
+                   <span ng-show = "studentForm.email.$error.email">Invalid email address.</span>
+                </span> -->
+             </td>
+          </tr>
+          
+          <tr>
+             <td>End Date: </td>
+             <td><input type="date" ng-init="startDate=(myDate | date:'dd-MM-yyyy')" 
+             ng-model="discountForm.end_date" min="2020-07-02" max="2020-07-30"/>
+                <!-- <span style = "color:red" ng-show = "studentForm.email.$dirty && studentForm.email.$invalid">
+                   <span ng-show = "studentForm.email.$error.required">Email is required.</span>
+                   <span ng-show = "studentForm.email.$error.email">Invalid email address.</span>
+                </span> -->
+             </td>
+          </tr>
+          
+          <tr>
+             <td>
+                <button ng-click = "reset()">Reset</button>
+             </td>
+             <td>
+                <input type="submit" value="Submit" />
+             </td>
+          </tr>
+
+       </table>
+    </form>
+   
+ </div>
+ <!-- 
+ ng-disabled = "studentForm.firstname.$dirty &&
+                   studentForm.firstname.$invalid || studentForm.lastname.$dirty &&
+                   studentForm.lastname.$invalid || studentForm.email.$dirty &&
+                   studentForm.email.$invalid" -->
